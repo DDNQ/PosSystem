@@ -1,7 +1,7 @@
 import { getStoredToken } from "../utils/auth";
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL ?? "";
-console.log("API_URL =", API_URL);
+
 
 function buildQueryString(params) {
   const searchParams = new URLSearchParams();
