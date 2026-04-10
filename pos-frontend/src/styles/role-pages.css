@@ -1,0 +1,117 @@
+.role-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.role-stat-card {
+  border: 1px solid #dce3ea;
+  border-radius: 18px;
+  background: #ffffff;
+  box-shadow: 0 8px 24px rgba(31, 41, 55, 0.06);
+  padding: 18px 20px;
+}
+
+.role-stat-card span {
+  display: block;
+  color: #5e6b77;
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.role-stat-card strong {
+  display: block;
+  margin: 10px 0 8px;
+  font-size: 1.9rem;
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+.role-stat-card p {
+  margin: 0;
+  color: #5f6b77;
+  font-size: 0.9rem;
+}
+
+.role-inline-search {
+  min-width: 280px;
+  min-height: 40px;
+  border: 1px solid #d7dee6;
+  border-radius: 12px;
+  background: #ffffff;
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.role-inline-search input {
+  width: 100%;
+  border: none;
+  background: transparent;
+  outline: none;
+  color: #27313b;
+  font-size: 0.88rem;
+}
+
+.role-entity-cell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.role-entity-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 10px;
+  background: #edf6ff;
+  color: #179ae8;
+  display: grid;
+  place-items: center;
+}
+
+.role-table-empty-cell {
+  padding: 26px 20px;
+}
+
+.role-table-empty-state {
+  min-height: 124px;
+  border: 1px dashed #d8e0e8;
+  border-radius: 18px;
+  background: linear-gradient(180deg, #fbfcfe 0%, #ffffff 100%);
+  display: grid;
+  place-content: center;
+  gap: 10px;
+  padding: 24px;
+  text-align: center;
+}
+
+.role-table-empty-state strong {
+  color: #24303a;
+  font-size: 1rem;
+}
+
+.role-table-empty-state p {
+  margin: 0;
+  color: #62707c;
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+.cashier-performance-table-card.is-compact {
+  align-self: start;
+  height: fit-content;
+}
+
+@media (max-width: 920px) {
+  .role-stat-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .role-inline-search {
+    min-width: 0;
+    width: 100%;
+  }
+}
