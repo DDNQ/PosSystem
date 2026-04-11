@@ -68,15 +68,15 @@ const formatPayment = (payment) => ({
   providerReference: payment.providerReference,
   sale: payment.sale
     ? {
-        id: payment.sale.id,
-        subtotal: toCurrencyNumber(payment.sale.subtotal),
-        tax: toCurrencyNumber(payment.sale.tax),
-        discount: toCurrencyNumber(payment.sale.discount),
-        total: toCurrencyNumber(payment.sale.total),
-        cashierId: payment.sale.cashierId,
-        createdAt: payment.sale.createdAt,
-        updatedAt: payment.sale.updatedAt,
-      }
+      id: payment.sale.id,
+      subtotal: toCurrencyNumber(payment.sale.subtotal),
+      tax: toCurrencyNumber(payment.sale.tax),
+      discount: toCurrencyNumber(payment.sale.discount),
+      total: toCurrencyNumber(payment.sale.total),
+      cashierId: payment.sale.cashierId,
+      createdAt: payment.sale.createdAt,
+      updatedAt: payment.sale.updatedAt,
+    }
     : null,
   createdAt: payment.createdAt,
   updatedAt: payment.updatedAt,

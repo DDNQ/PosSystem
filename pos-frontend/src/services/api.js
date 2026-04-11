@@ -1,6 +1,18 @@
 import { getStoredToken } from "../utils/auth";
 
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL ?? "";
+const PRODUCTION_API_URL_FALLBACK = "https://pos-system-nu-coral.vercel.app";
+
+function normalizeApiUrl(url) {
+  if (typeof url !== "string") {
+    return "";
+  }
+
+  return url.trim().replace(/\/+$/, "");
+}
+
+const API_URL =
+  normalizeApiUrl(import.meta.env.VITE_API_URL) ||
+  (import.meta.env.PROD ? PRODUCTION_API_URL_FALLBACK : "");
 
 function buildQueryString(params) {
   const searchParams = new URLSearchParams();
@@ -62,13 +74,13 @@ async function handleResponse(response) {
 }
 
 export async function getJson(path) {
-  const response = await fetch(`${API_BASE_URL}${path}`);
+  const response = await fetch(`${API_URL}${path}`);
 
   return handleResponse(response);
 }
 
 export async function postJson(path, body) {
-  const response = await fetch(`${API_BASE_URL}${path}`, {
+  const response = await fetch(`${API_URL}${path}`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -81,7 +93,7 @@ export async function postJson(path, body) {
 }
 
 export async function patchJson(path, body) {
-  const response = await fetch(`${API_BASE_URL}${path}`, {
+  const response = await fetch(`${API_URL}${path}`, {
     method: "PATCH",
     headers: {
       "Content-Type": "application/json",
@@ -94,7 +106,7 @@ export async function patchJson(path, body) {
 }
 
 export async function putJson(path, body) {
-  const response = await fetch(`${API_BASE_URL}${path}`, {
+  const response = await fetch(`${API_URL}${path}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",

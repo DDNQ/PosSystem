@@ -18,5 +18,5 @@ export default defineConfig({
     port: 3001,
     strictPort: true,
   },
-  base: process.env.VITE_BASE_PATH || '/PosSystem',
+  base: '/',
 })
